@@ -1,0 +1,35 @@
+.formation-page {
+    padding: 20px;
+  }
+  
+  .formation-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .formation-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .formation-card h2 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .formation-card p {
+    margin-top: 10px;
+  }
+  
+  .formation-card button {
+    margin-top: 10px;
+    background-color: #6407f9;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  }
+  

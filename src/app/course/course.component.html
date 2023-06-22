@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+<div class="course-page">
+    <h1>Courses</h1>
+    
+    <div class="course-container">
+      <div class="course-card"  *ngFor="let course of courses">
+        <a  >{{ course.title }}</a>
+        <a routerLink="/cours" >  <p>{{ course.description }}</p></a>
+        <button (click)="downloadPDF(course)">Download PDF</button> 
+
+
+        <button *ngIf="isTeacherOrAdmin()" routerLink="/cours">Add</button>
+        <!-- Appel de la méthode downloadPDF -->
+      </div>
+    
+    </div>
+  </div>
+  

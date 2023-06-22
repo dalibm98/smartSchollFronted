@@ -1,0 +1,53 @@
+/* CSS for Blog Posts */
+.blog-post-container {
+  margin-top: 20px;
+}
+
+.blog-post {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.blog-post h3 {
+  margin-top: 0;
+}
+
+.blog-post p {
+  margin-bottom: 0;
+}
+
+.blog-post button {
+  margin-top: 10px;
+  background-color: #6407f9;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* CSS for Customer Sections */
+.customer-sections {
+  margin-top: 20px;
+}
+
+.customer-section {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.customer-section h3 {
+  margin-top: 0;
+}
+
+.customer-section button {
+  margin-top: 10px;
+  background-color: #6407f9;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

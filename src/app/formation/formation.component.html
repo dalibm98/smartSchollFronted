@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+<div class="formation-page">
+    <h1>Formations</h1>
+    <div class="formation-list">
+      <div class="formation-card" *ngFor="let formation of formations">
+        <h2>{{ formation.title }}</h2>
+        <p>{{ formation.description }}</p>
+        <button (click)="applyToFormation(formation)">Apply</button>
+      </div>
+    </div>
+  </div>
+  

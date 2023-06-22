@@ -1,0 +1,38 @@
+<div class="schedule-container">
+    <h1>Schedule</h1>
+  
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entry of schedule">
+            <td>{{ entry.time }}</td>
+          <td><select [(ngModel)]="entry.className">
+            <option *ngFor="let className of classNames" [value]="className">{{ className }}</option>
+          </select></td>
+          <td><select [(ngModel)]="entry.className">
+            <option *ngFor="let className of classNames" [value]="className">{{ className }}</option>
+          </select></td>
+          <td><select [(ngModel)]="entry.className">
+            <option *ngFor="let className of classNames" [value]="className">{{ className }}</option>
+          </select></td>
+          <td><select [(ngModel)]="entry.className">
+            <option *ngFor="let className of classNames" [value]="className">{{ className }}</option>
+          </select></td>
+          <td><select [(ngModel)]="entry.className">
+            <option *ngFor="let className of classNames" [value]="className">{{ className }}</option>
+          </select></td>
+        </tr>
+       
+      </tbody>
+    </table>
+  </div>
+  

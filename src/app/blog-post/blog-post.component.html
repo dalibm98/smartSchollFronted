@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+
+<div class="blog-post-container">
+  <h2>Blog Posts</h2>
+  <div *ngFor="let post of blogPosts" class="blog-post">
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.content }}</p>
+    <button (click)="applyToPost(post)">Apply</button>
+  </div>
+</div>
+
+<div class="customer-sections">
+  <h2>Customer Sections</h2>
+
+  <div class="customer-section">
+    <h3>Follow-up of formation in progress</h3>
+    <button (click)="checkFormationProgress()">Check Formation Progress</button>
+    <!-- Add your content and functionality related to formation in progress here -->
+  </div>
+
+  <div class="customer-section">
+    <h3>Request for documents (School service)</h3>
+    <button (click)="requestDocuments()">Request Documents</button>
+    <!-- Add your content and functionality related to document requests here -->
+  </div>
+
+  <div class="customer-section">
+    <h3>Planning of Appointments</h3>
+    <button (click)="planAppointments()">Plan Appointments</button>
+    <!-- Add your content and functionality related to appointment planning here -->
+  </div>
+</div>

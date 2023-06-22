@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel</title>
+</head>
+
+<body>
+<div class="side-menu">
+  <div class="brand-name">
+    <h1>ADMIN</h1>
+  </div>
+  <ul>
+    <li>Dashboard</li>
+    <li routerLink="/dashboard/add-users">Student</li>
+    <li routerLink="/dashboard/AddTrainer">Trainer</li>
+    <li routerLink="/dashboard/Users">Users</li>
+    <li routerLink="/add-courses">Courses</li>
+    <li>Formation</li>
+    <li>Schedule</li>
+  </ul>
+</div>
+<div class="container">
+  <div class="header">
+    <div class="nav">
+      <div class="search">
+        <input type="text" placeholder="Search..."/>
+      </div>
+      <div class="user">
+        <a href="#">Profile</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="allpage">
+      <div class="adduse">
+        <button (click)="openDialog()">Add User</button>
+      </div>
+      <br/>
+      <table id="user-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.nom }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.role }}</td>
+            <td>
+              <div class="modet">
+                <button (click)="openDialog(user)">Modify</button>
+                <button (click)="deleteUser(user)">Delete</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <ng-template #dialogTemplate  class="form-container">
+      <div style="font-size: 1.2em; color: blue;">
+        <h5>{{ dialogTitle }}</h5>
+      </div>
+     
+      <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+        <div>
+          <label for="nom">Nom:</label>
+          <input type="text" id="nom" name="nom" [(ngModel)]="selectedUser.nom" required/>
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" [(ngModel)]="selectedUser.email" required/>
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" [(ngModel)]="selectedUser.password" required/>
+        </div>
+        <div>
+          <label for="role">Role:</label>
+          <select id="role" name="role" [(ngModel)]="selectedUser.role" required>
+            <option value="Trainer">Trainer</option>
+            <option value="Admin">Admin</option>
+            <option value="Student">Student</option>
+          </select>
+        </div>
+        <br><br>
+        <button type="submit">Add</button>
+        <button type="Cancel" (click)="dialogRef.close()">Cancel</button>
+      </form>
+    </ng-template>
+    </div>
+  </div>

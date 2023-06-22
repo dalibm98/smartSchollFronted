@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<h2>Request Documents</h2>
+<form (submit)="submitForm()">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="name" required>
+  </div>
+  <div>
+    <label for="documentType">Document Type:</label>
+    <input type="text" id="documentType" name="documentType" [(ngModel)]="documentType" required>
+  </div>
+  <div>
+    <label for="reason">Reason for Request:</label>
+    <textarea id="reason" name="reason" [(ngModel)]="reason" required></textarea>
+  </div>
+  <button type="submit">Submit</button>
+</form>

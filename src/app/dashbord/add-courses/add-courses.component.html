@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+</head>
+
+<body>
+  <div class="side-menu">
+    <div class="brand-name">
+      <h1>ADMIN</h1>
+    </div>
+    <ul>
+      <li>Dashboard</li>
+      <li routerLink="/dashboard/add-users">Student</li>
+      <li routerLink="/dashboard/AddTrainer">Trainer</li>
+      <li routerLink="/dashboard/Users">Users</li>
+      <li routerLink="/add-courses">Courses</li>
+    
+      <li>Formation</li>
+      <li>Schedule</li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="header">
+      <div class="nav">
+        <div class="search">
+          <input type="text" placeholder="Search...">
+        
+        </div>
+        <div class="user">
+          <a href="#">Profile</a>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="allpage">
+        <div class="adduse">
+        <button routerLink="/cours">Add courses</button>
+        
+      </div>
+      <br>  <table id="user-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>title</th>
+              <th>description</th>
+              <th>PDF</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody  *ngFor="let course of courses">
+            <tr>
+              <td>{{ course.id }}</td>
+              <td>{{ course.title }}</td>
+              <td>{{ course.description }}</td>
+              <td> <button (click)="downloadPDF(course)">Download PDF</button></td>
+              <td >
+                <div class="modet">
+                <button>Modify</button>
+                <button (click)="deleteCourse(course.id)">Delete</button>
+              </div>
+              </td>
+            </tr>
+          </tbody>
+         
+        </table>
+        </div>        
+      <div class="content-2"></div>
+    </div>
+</div>
+    
+</body>
+
+</html>
